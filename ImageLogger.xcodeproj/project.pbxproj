@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6D19D0CD18E85FF20094D1B0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D19D0CC18E85FF20094D1B0 /* UIKit.framework */; };
+		6D19D1A418E8C1C50094D1B0 /* LLImageLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D19D1A318E8C1C50094D1B0 /* LLImageLogger.m */; };
+		6D19D1A518E8C1CA0094D1B0 /* LLImageLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D19D1A318E8C1C50094D1B0 /* LLImageLogger.m */; };
+		6D53E3C418E4384C002B3680 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D53E3C318E4384C002B3680 /* Cocoa.framework */; };
+		6D53E3CE18E4384C002B3680 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D53E3CC18E4384C002B3680 /* InfoPlist.strings */; };
+		6D53E3D018E4384C002B3680 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D53E3CF18E4384C002B3680 /* main.m */; };
+		6D53E3D418E4384C002B3680 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6D53E3D218E4384C002B3680 /* Credits.rtf */; };
+		6D53E3D718E4384C002B3680 /* LLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D53E3D618E4384C002B3680 /* LLAppDelegate.m */; };
+		6D53E3DA18E4384C002B3680 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D53E3D818E4384C002B3680 /* MainMenu.xib */; };
+		6D53E3DC18E4384C002B3680 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D53E3DB18E4384C002B3680 /* Images.xcassets */; };
+		6D53E40318E44281002B3680 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D53E40218E44281002B3680 /* Foundation.framework */; };
+		6D53E40518E44281002B3680 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D53E40418E44281002B3680 /* CoreGraphics.framework */; };
+		6D53E40D18E44281002B3680 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D53E40B18E44281002B3680 /* InfoPlist.strings */; };
+		6D53E40F18E44281002B3680 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D53E40E18E44281002B3680 /* main.m */; };
+		6D53E41318E44281002B3680 /* LLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D53E41218E44281002B3680 /* LLAppDelegate.m */; };
+		6D53E41518E44281002B3680 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D53E41418E44281002B3680 /* Images.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6D19D0CC18E85FF20094D1B0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		6D19D1A218E8C1C50094D1B0 /* LLImageLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLImageLogger.h; path = Shared/LLImageLogger.h; sourceTree = "<group>"; };
+		6D19D1A318E8C1C50094D1B0 /* LLImageLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLImageLogger.m; path = Shared/LLImageLogger.m; sourceTree = "<group>"; };
+		6D53E3C018E4384C002B3680 /* ImageLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D53E3C318E4384C002B3680 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		6D53E3C618E4384C002B3680 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		6D53E3C718E4384C002B3680 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6D53E3C818E4384C002B3680 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6D53E3CB18E4384C002B3680 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D53E3CD18E4384C002B3680 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6D53E3CF18E4384C002B3680 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6D53E3D318E4384C002B3680 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		6D53E3D518E4384C002B3680 /* LLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLAppDelegate.h; sourceTree = "<group>"; };
+		6D53E3D618E4384C002B3680 /* LLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLAppDelegate.m; sourceTree = "<group>"; };
+		6D53E3D918E4384C002B3680 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		6D53E3DB18E4384C002B3680 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6D53E40118E44281002B3680 /* ImageLoggerTouch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageLoggerTouch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D53E40218E44281002B3680 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6D53E40418E44281002B3680 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6D53E40C18E44281002B3680 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6D53E40E18E44281002B3680 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6D53E41118E44281002B3680 /* LLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLAppDelegate.h; sourceTree = "<group>"; };
+		6D53E41218E44281002B3680 /* LLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLAppDelegate.m; sourceTree = "<group>"; };
+		6D53E41418E44281002B3680 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6D53E43118E44330002B3680 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6D53E3BD18E4384C002B3680 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D53E3C418E4384C002B3680 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D53E3FE18E44281002B3680 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D19D0CD18E85FF20094D1B0 /* UIKit.framework in Frameworks */,
+				6D53E40518E44281002B3680 /* CoreGraphics.framework in Frameworks */,
+				6D53E40318E44281002B3680 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6D53E3B718E4384C002B3680 = {
+			isa = PBXGroup;
+			children = (
+				6D53E42E18E4428E002B3680 /* Shared */,
+				6D53E3C918E4384C002B3680 /* ImageLogger */,
+				6D53E40818E44281002B3680 /* ImageLogger Touch */,
+				6D53E3C218E4384C002B3680 /* Frameworks */,
+				6D53E3C118E4384C002B3680 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6D53E3C118E4384C002B3680 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6D53E3C018E4384C002B3680 /* ImageLogger.app */,
+				6D53E40118E44281002B3680 /* ImageLoggerTouch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6D53E3C218E4384C002B3680 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D53E40218E44281002B3680 /* Foundation.framework */,
+				6D53E40418E44281002B3680 /* CoreGraphics.framework */,
+				6D19D0CC18E85FF20094D1B0 /* UIKit.framework */,
+				6D53E3C318E4384C002B3680 /* Cocoa.framework */,
+				6D53E3C518E4384C002B3680 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6D53E3C518E4384C002B3680 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D53E3C618E4384C002B3680 /* AppKit.framework */,
+				6D53E3C718E4384C002B3680 /* CoreData.framework */,
+				6D53E3C818E4384C002B3680 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		6D53E3C918E4384C002B3680 /* ImageLogger */ = {
+			isa = PBXGroup;
+			children = (
+				6D53E3D518E4384C002B3680 /* LLAppDelegate.h */,
+				6D53E3D618E4384C002B3680 /* LLAppDelegate.m */,
+				6D53E3D818E4384C002B3680 /* MainMenu.xib */,
+				6D53E3F718E43864002B3680 /* Other Sources */,
+				6D53E3CA18E4384C002B3680 /* Supporting Files */,
+				6D53E3DB18E4384C002B3680 /* Images.xcassets */,
+			);
+			path = ImageLogger;
+			sourceTree = "<group>";
+		};
+		6D53E3CA18E4384C002B3680 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6D53E3CB18E4384C002B3680 /* Info.plist */,
+				6D53E3CC18E4384C002B3680 /* InfoPlist.strings */,
+				6D53E3D218E4384C002B3680 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D53E3F718E43864002B3680 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6D53E3CF18E4384C002B3680 /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		6D53E40818E44281002B3680 /* ImageLogger Touch */ = {
+			isa = PBXGroup;
+			children = (
+				6D53E41118E44281002B3680 /* LLAppDelegate.h */,
+				6D53E41218E44281002B3680 /* LLAppDelegate.m */,
+				6D53E42F18E442B0002B3680 /* Other Sources */,
+				6D53E40918E44281002B3680 /* Supporting Files */,
+				6D53E41418E44281002B3680 /* Images.xcassets */,
+			);
+			name = "ImageLogger Touch";
+			path = ImageLoggerTouch;
+			sourceTree = "<group>";
+		};
+		6D53E40918E44281002B3680 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6D53E43118E44330002B3680 /* Info.plist */,
+				6D53E40B18E44281002B3680 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D53E42E18E4428E002B3680 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				6D19D1A218E8C1C50094D1B0 /* LLImageLogger.h */,
+				6D19D1A318E8C1C50094D1B0 /* LLImageLogger.m */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		6D53E42F18E442B0002B3680 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6D53E40E18E44281002B3680 /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6D53E3BF18E4384C002B3680 /* ImageLogger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D53E3F118E4384C002B3680 /* Build configuration list for PBXNativeTarget "ImageLogger" */;
+			buildPhases = (
+				6D53E3BC18E4384C002B3680 /* Sources */,
+				6D53E3BD18E4384C002B3680 /* Frameworks */,
+				6D53E3BE18E4384C002B3680 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ImageLogger;
+			productName = ImageLogger;
+			productReference = 6D53E3C018E4384C002B3680 /* ImageLogger.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6D53E40018E44281002B3680 /* ImageLoggerTouch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D53E42818E44282002B3680 /* Build configuration list for PBXNativeTarget "ImageLoggerTouch" */;
+			buildPhases = (
+				6D53E3FD18E44281002B3680 /* Sources */,
+				6D53E3FE18E44281002B3680 /* Frameworks */,
+				6D53E3FF18E44281002B3680 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ImageLoggerTouch;
+			productName = ImageLoggerTouch;
+			productReference = 6D53E40118E44281002B3680 /* ImageLoggerTouch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6D53E3B818E4384C002B3680 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = LL;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Damien DeVille";
+			};
+			buildConfigurationList = 6D53E3BB18E4384C002B3680 /* Build configuration list for PBXProject "ImageLogger" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6D53E3B718E4384C002B3680;
+			productRefGroup = 6D53E3C118E4384C002B3680 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6D53E3BF18E4384C002B3680 /* ImageLogger */,
+				6D53E40018E44281002B3680 /* ImageLoggerTouch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6D53E3BE18E4384C002B3680 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D53E3CE18E4384C002B3680 /* InfoPlist.strings in Resources */,
+				6D53E3DC18E4384C002B3680 /* Images.xcassets in Resources */,
+				6D53E3D418E4384C002B3680 /* Credits.rtf in Resources */,
+				6D53E3DA18E4384C002B3680 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D53E3FF18E44281002B3680 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D53E40D18E44281002B3680 /* InfoPlist.strings in Resources */,
+				6D53E41518E44281002B3680 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6D53E3BC18E4384C002B3680 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D53E3D718E4384C002B3680 /* LLAppDelegate.m in Sources */,
+				6D19D1A418E8C1C50094D1B0 /* LLImageLogger.m in Sources */,
+				6D53E3D018E4384C002B3680 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D53E3FD18E44281002B3680 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D53E41318E44281002B3680 /* LLAppDelegate.m in Sources */,
+				6D19D1A518E8C1CA0094D1B0 /* LLImageLogger.m in Sources */,
+				6D53E40F18E44281002B3680 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6D53E3CC18E4384C002B3680 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D53E3CD18E4384C002B3680 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6D53E3D218E4384C002B3680 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D53E3D318E4384C002B3680 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		6D53E3D818E4384C002B3680 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D53E3D918E4384C002B3680 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		6D53E40B18E44281002B3680 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D53E40C18E44281002B3680 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6D53E3EF18E4384C002B3680 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				WARNING_CFLAGS = "-Wall";
+			};
+			name = Debug;
+		};
+		6D53E3F018E4384C002B3680 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+				WARNING_CFLAGS = "-Wall";
+			};
+			name = Release;
+		};
+		6D53E3F218E4384C002B3680 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ImageLogger/Info.plist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6D53E3F318E4384C002B3680 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ImageLogger/Info.plist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		6D53E42918E44282002B3680 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ImageLoggerTouch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6D53E42A18E44282002B3680 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				INFOPLIST_FILE = ImageLoggerTouch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6D53E3BB18E4384C002B3680 /* Build configuration list for PBXProject "ImageLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D53E3EF18E4384C002B3680 /* Debug */,
+				6D53E3F018E4384C002B3680 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D53E3F118E4384C002B3680 /* Build configuration list for PBXNativeTarget "ImageLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D53E3F218E4384C002B3680 /* Debug */,
+				6D53E3F318E4384C002B3680 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D53E42818E44282002B3680 /* Build configuration list for PBXNativeTarget "ImageLoggerTouch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D53E42918E44282002B3680 /* Debug */,
+				6D53E42A18E44282002B3680 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6D53E3B818E4384C002B3680 /* Project object */;
+}
