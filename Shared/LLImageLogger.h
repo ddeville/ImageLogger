@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AppKit/AppKit.h>
 
 @interface LLImageLogger : NSObject
+
++ (NSMutableArray*)images;
 
 @end

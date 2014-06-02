@@ -10,10 +10,6 @@
 		6D19D0CD18E85FF20094D1B0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D19D0CC18E85FF20094D1B0 /* UIKit.framework */; };
 		6D19D1A418E8C1C50094D1B0 /* LLImageLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D19D1A318E8C1C50094D1B0 /* LLImageLogger.m */; };
 		6D19D1A518E8C1CA0094D1B0 /* LLImageLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D19D1A318E8C1C50094D1B0 /* LLImageLogger.m */; };
-		6D53E3C418E4384C002B3680 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D53E3C318E4384C002B3680 /* Cocoa.framework */; };
-		6D53E3CE18E4384C002B3680 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D53E3CC18E4384C002B3680 /* InfoPlist.strings */; };
-		6D53E3D018E4384C002B3680 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D53E3CF18E4384C002B3680 /* main.m */; };
-		6D53E3D418E4384C002B3680 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6D53E3D218E4384C002B3680 /* Credits.rtf */; };
 		6D53E3D718E4384C002B3680 /* LLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D53E3D618E4384C002B3680 /* LLAppDelegate.m */; };
 		6D53E3DA18E4384C002B3680 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D53E3D818E4384C002B3680 /* MainMenu.xib */; };
 		6D53E3DC18E4384C002B3680 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D53E3DB18E4384C002B3680 /* Images.xcassets */; };
@@ -35,9 +31,6 @@
 		6D53E3C718E4384C002B3680 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		6D53E3C818E4384C002B3680 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6D53E3CB18E4384C002B3680 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6D53E3CD18E4384C002B3680 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6D53E3CF18E4384C002B3680 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6D53E3D318E4384C002B3680 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		6D53E3D518E4384C002B3680 /* LLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLAppDelegate.h; sourceTree = "<group>"; };
 		6D53E3D618E4384C002B3680 /* LLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLAppDelegate.m; sourceTree = "<group>"; };
 		6D53E3D918E4384C002B3680 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -54,14 +47,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6D53E3BD18E4384C002B3680 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6D53E3C418E4384C002B3680 /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6D53E3FE18E44281002B3680 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -123,9 +108,7 @@
 				6D53E3D518E4384C002B3680 /* LLAppDelegate.h */,
 				6D53E3D618E4384C002B3680 /* LLAppDelegate.m */,
 				6D53E3D818E4384C002B3680 /* MainMenu.xib */,
-				6D53E3F718E43864002B3680 /* Other Sources */,
 				6D53E3CA18E4384C002B3680 /* Supporting Files */,
-				6D53E3DB18E4384C002B3680 /* Images.xcassets */,
 			);
 			path = ImageLogger;
 			sourceTree = "<group>";
@@ -133,19 +116,10 @@
 		6D53E3CA18E4384C002B3680 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6D53E3DB18E4384C002B3680 /* Images.xcassets */,
 				6D53E3CB18E4384C002B3680 /* Info.plist */,
-				6D53E3CC18E4384C002B3680 /* InfoPlist.strings */,
-				6D53E3D218E4384C002B3680 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		6D53E3F718E43864002B3680 /* Other Sources */ = {
-			isa = PBXGroup;
-			children = (
-				6D53E3CF18E4384C002B3680 /* main.m */,
-			);
-			name = "Other Sources";
 			sourceTree = "<group>";
 		};
 		6D53E40818E44281002B3680 /* ImageLogger Touch */ = {
@@ -195,7 +169,6 @@
 			buildConfigurationList = 6D53E3F118E4384C002B3680 /* Build configuration list for PBXNativeTarget "ImageLogger" */;
 			buildPhases = (
 				6D53E3BC18E4384C002B3680 /* Sources */,
-				6D53E3BD18E4384C002B3680 /* Frameworks */,
 				6D53E3BE18E4384C002B3680 /* Resources */,
 			);
 			buildRules = (
@@ -258,9 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D53E3CE18E4384C002B3680 /* InfoPlist.strings in Resources */,
 				6D53E3DC18E4384C002B3680 /* Images.xcassets in Resources */,
-				6D53E3D418E4384C002B3680 /* Credits.rtf in Resources */,
 				6D53E3DA18E4384C002B3680 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,7 +254,6 @@
 			files = (
 				6D53E3D718E4384C002B3680 /* LLAppDelegate.m in Sources */,
 				6D19D1A418E8C1C50094D1B0 /* LLImageLogger.m in Sources */,
-				6D53E3D018E4384C002B3680 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,22 +270,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6D53E3CC18E4384C002B3680 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6D53E3CD18E4384C002B3680 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		6D53E3D218E4384C002B3680 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6D53E3D318E4384C002B3680 /* en */,
-			);
-			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
 		6D53E3D818E4384C002B3680 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -352,7 +306,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -393,7 +347,7 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;

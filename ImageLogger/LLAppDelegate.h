@@ -8,8 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface LLAppDelegate : NSObject <NSApplicationDelegate>
+@interface LLAppDelegate : NSObject <NSApplicationDelegate, NSTableViewDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSTableView *table;
+@property (assign) IBOutlet NSArrayController *images;
+
+- (IBAction) loadSomething:(id)x;
 
 @end
