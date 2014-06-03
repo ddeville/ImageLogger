@@ -10,10 +10,14 @@
 
 @interface LLAppDelegate : NSObject <NSApplicationDelegate, NSTableViewDelegate>
 
-@property (assign) IBOutlet NSWindow *window;
-@property (assign) IBOutlet NSTableView *table;
-@property (assign) IBOutlet NSArrayController *images;
 
-- (IBAction) loadSomething:(id)x;
+@property (assign) IBOutlet NSWindow *window;
+
+@property (assign) IBOutlet NSPathControl *path;
+@property (assign) IBOutlet NSTableView *table;
+
+@property (readonly) NSArray *images;
+
+- (IBAction) loadMore:(id)x;
 
 @end

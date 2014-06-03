@@ -11,14 +11,15 @@
 		6D19D1A418E8C1C50094D1B0 /* LLImageLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D19D1A318E8C1C50094D1B0 /* LLImageLogger.m */; };
 		6D19D1A518E8C1CA0094D1B0 /* LLImageLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D19D1A318E8C1C50094D1B0 /* LLImageLogger.m */; };
 		6D53E3D718E4384C002B3680 /* LLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D53E3D618E4384C002B3680 /* LLAppDelegate.m */; };
-		6D53E3DA18E4384C002B3680 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D53E3D818E4384C002B3680 /* MainMenu.xib */; };
 		6D53E3DC18E4384C002B3680 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D53E3DB18E4384C002B3680 /* Images.xcassets */; };
 		6D53E40318E44281002B3680 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D53E40218E44281002B3680 /* Foundation.framework */; };
 		6D53E40518E44281002B3680 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D53E40418E44281002B3680 /* CoreGraphics.framework */; };
-		6D53E40D18E44281002B3680 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D53E40B18E44281002B3680 /* InfoPlist.strings */; };
 		6D53E40F18E44281002B3680 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D53E40E18E44281002B3680 /* main.m */; };
 		6D53E41318E44281002B3680 /* LLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D53E41218E44281002B3680 /* LLAppDelegate.m */; };
 		6D53E41518E44281002B3680 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D53E41418E44281002B3680 /* Images.xcassets */; };
+		7B46C551193D2599007D72D5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B46C550193D2599007D72D5 /* MainMenu.xib */; };
+		7BB55635193D8649002A9705 /* dylib.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BB55633193D8646002A9705 /* dylib.png */; };
+		7BB55636193D864A002A9705 /* framework.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BB55634193D8649002A9705 /* framework.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,24 +27,23 @@
 		6D19D1A218E8C1C50094D1B0 /* LLImageLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLImageLogger.h; path = Shared/LLImageLogger.h; sourceTree = "<group>"; };
 		6D19D1A318E8C1C50094D1B0 /* LLImageLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLImageLogger.m; path = Shared/LLImageLogger.m; sourceTree = "<group>"; };
 		6D53E3C018E4384C002B3680 /* ImageLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6D53E3C318E4384C002B3680 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		6D53E3C618E4384C002B3680 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		6D53E3C718E4384C002B3680 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		6D53E3C818E4384C002B3680 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6D53E3CB18E4384C002B3680 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D53E3D518E4384C002B3680 /* LLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLAppDelegate.h; sourceTree = "<group>"; };
 		6D53E3D618E4384C002B3680 /* LLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLAppDelegate.m; sourceTree = "<group>"; };
-		6D53E3D918E4384C002B3680 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		6D53E3DB18E4384C002B3680 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6D53E40118E44281002B3680 /* ImageLoggerTouch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageLoggerTouch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D53E40218E44281002B3680 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6D53E40418E44281002B3680 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		6D53E40C18E44281002B3680 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6D53E40E18E44281002B3680 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6D53E41118E44281002B3680 /* LLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLAppDelegate.h; sourceTree = "<group>"; };
 		6D53E41218E44281002B3680 /* LLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLAppDelegate.m; sourceTree = "<group>"; };
 		6D53E41418E44281002B3680 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6D53E43118E44330002B3680 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B46C550193D2599007D72D5 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		7B4EB00F193DFDB400366BFC /* Logger.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Logger.playground; sourceTree = "<group>"; };
+		7BB55631193D5CCA002A9705 /* framework.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = framework.icns; sourceTree = "<group>"; };
+		7BB55633193D8646002A9705 /* dylib.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dylib.png; sourceTree = "<group>"; };
+		7BB55634193D8649002A9705 /* framework.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = framework.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,10 +63,9 @@
 		6D53E3B718E4384C002B3680 = {
 			isa = PBXGroup;
 			children = (
-				6D53E42E18E4428E002B3680 /* Shared */,
-				6D53E3C918E4384C002B3680 /* ImageLogger */,
-				6D53E40818E44281002B3680 /* ImageLogger Touch */,
-				6D53E3C218E4384C002B3680 /* Frameworks */,
+				6D53E42E18E4428E002B3680 /* Common */,
+				6D53E3C918E4384C002B3680 /* ImageLogger OSX */,
+				6D53E40818E44281002B3680 /* ImageLogger iOS */,
 				6D53E3C118E4384C002B3680 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,30 +85,20 @@
 				6D53E40218E44281002B3680 /* Foundation.framework */,
 				6D53E40418E44281002B3680 /* CoreGraphics.framework */,
 				6D19D0CC18E85FF20094D1B0 /* UIKit.framework */,
-				6D53E3C318E4384C002B3680 /* Cocoa.framework */,
-				6D53E3C518E4384C002B3680 /* Other Frameworks */,
 			);
 			name = Frameworks;
+			path = ..;
 			sourceTree = "<group>";
 		};
-		6D53E3C518E4384C002B3680 /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6D53E3C618E4384C002B3680 /* AppKit.framework */,
-				6D53E3C718E4384C002B3680 /* CoreData.framework */,
-				6D53E3C818E4384C002B3680 /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
-			sourceTree = "<group>";
-		};
-		6D53E3C918E4384C002B3680 /* ImageLogger */ = {
+		6D53E3C918E4384C002B3680 /* ImageLogger OSX */ = {
 			isa = PBXGroup;
 			children = (
 				6D53E3D518E4384C002B3680 /* LLAppDelegate.h */,
 				6D53E3D618E4384C002B3680 /* LLAppDelegate.m */,
-				6D53E3D818E4384C002B3680 /* MainMenu.xib */,
+				7B46C550193D2599007D72D5 /* MainMenu.xib */,
 				6D53E3CA18E4384C002B3680 /* Supporting Files */,
 			);
+			name = "ImageLogger OSX";
 			path = ImageLogger;
 			sourceTree = "<group>";
 		};
@@ -117,21 +106,26 @@
 			isa = PBXGroup;
 			children = (
 				6D53E3DB18E4384C002B3680 /* Images.xcassets */,
+				7BB55631193D5CCA002A9705 /* framework.icns */,
+				7BB55633193D8646002A9705 /* dylib.png */,
+				7BB55634193D8649002A9705 /* framework.png */,
+				7B4EB00F193DFDB400366BFC /* Logger.playground */,
 				6D53E3CB18E4384C002B3680 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6D53E40818E44281002B3680 /* ImageLogger Touch */ = {
+		6D53E40818E44281002B3680 /* ImageLogger iOS */ = {
 			isa = PBXGroup;
 			children = (
+				6D53E3C218E4384C002B3680 /* Frameworks */,
 				6D53E41118E44281002B3680 /* LLAppDelegate.h */,
 				6D53E41218E44281002B3680 /* LLAppDelegate.m */,
 				6D53E42F18E442B0002B3680 /* Other Sources */,
 				6D53E40918E44281002B3680 /* Supporting Files */,
 				6D53E41418E44281002B3680 /* Images.xcassets */,
 			);
-			name = "ImageLogger Touch";
+			name = "ImageLogger iOS";
 			path = ImageLoggerTouch;
 			sourceTree = "<group>";
 		};
@@ -139,18 +133,17 @@
 			isa = PBXGroup;
 			children = (
 				6D53E43118E44330002B3680 /* Info.plist */,
-				6D53E40B18E44281002B3680 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6D53E42E18E4428E002B3680 /* Shared */ = {
+		6D53E42E18E4428E002B3680 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				6D19D1A218E8C1C50094D1B0 /* LLImageLogger.h */,
 				6D19D1A318E8C1C50094D1B0 /* LLImageLogger.m */,
 			);
-			name = Shared;
+			name = Common;
 			sourceTree = "<group>";
 		};
 		6D53E42F18E442B0002B3680 /* Other Sources */ = {
@@ -232,7 +225,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D53E3DC18E4384C002B3680 /* Images.xcassets in Resources */,
-				6D53E3DA18E4384C002B3680 /* MainMenu.xib in Resources */,
+				7B46C551193D2599007D72D5 /* MainMenu.xib in Resources */,
+				7BB55636193D864A002A9705 /* framework.png in Resources */,
+				7BB55635193D8649002A9705 /* dylib.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +235,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D53E40D18E44281002B3680 /* InfoPlist.strings in Resources */,
 				6D53E41518E44281002B3680 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,30 +263,12 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		6D53E3D818E4384C002B3680 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6D53E3D918E4384C002B3680 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-		6D53E40B18E44281002B3680 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6D53E40C18E44281002B3680 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		6D53E3EF18E4384C002B3680 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -332,6 +308,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;

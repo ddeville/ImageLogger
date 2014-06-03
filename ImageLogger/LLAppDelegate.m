@@ -1,10 +1,3 @@
-#import "LLAppDelegate.h"
-#import "LLImageLogger.h"
-
-@interface CautionRow : NSTableRowView @end
-@implementation CautionRow
-- (void) drawBackgroundInRect:(NSRect)d { [super drawBackgroundInRect:d]; [NSColor.redColor set]; NSRectFill(d);  }
-@end
 //
 //  LLAppDelegate.m
 //  ImageLogger
@@ -13,33 +6,48 @@
 //  Copyright (c) 2014 Damien DeVille. All rights reserved.
 //
 
+#import "LLAppDelegate.h"
+#import "LLImageLogger.h"
 
 @implementation LLAppDelegate
 
-- (IBAction) loadSomething:(id)x  {
+- (void) loadMore:(id)x {
 
-  NSBundle *b = [NSBundle bundleWithPath:@"~/Library/Frameworks/AtoZ.framework"];
-  NSError *e;
-  BOOL ok = [b preflightAndReturnError:&e];
-  if(ok && !e) [b load];
-  else NSLog(@"Error:%@", e);
+  NSOpenPanel * p = NSOpenPanel.openPanel;
+  [p beginSheetModalForWindow:_window
+            completionHandler:^(NSInteger r) {
+    if (r != NSFileHandlingPanelOKButton || !p.URLs.count) return;
+
+    NSURL *u = p.URLs[0];
+    NSLog (@"Loading %@", u.filePathURL);
+    //[_path.animator setHidden:NO]; _path.URL = r
+    NSError *e;
+    NSBundle *b = [NSBundle bundleWithURL:u.filePathURL]; //:url.path?:@"~/Library/Frameworks/AtoZ.framework"];
+      if (!b) return;
+    [b preflightAndReturnError:&e] && !e ? [b load] : NSLog(@"Error:%@", e);
+  }];
+}
+
+- (void) applicationDidFinishLaunching:(NSNotification *)n {
+
+  [NSNotificationCenter.defaultCenter addObserverForName:NEW_IMAGES_LOADED_NOTIFICATION object:nil queue:NSOperationQueue.mainQueue
+                                              usingBlock:^(NSNotification *n) {
+//    [self willChangeValueForKey:@"images"];
+//    [self didChangeValueForKey:@"images"];
+//    NSBeep();
+     [_table reloadData];
+  }];
 
 }
 - (void)awakeFromNib {
 
-  [_table setDelegate:self];
-  [_images setContent:NSMutableArray.new];
-  [LLImageLogger.images enumerateObjectsUsingBlock:^(NSMutableDictionary*d, NSUInteger idx, BOOL *stop) {
-    NSMutableDictionary *m = d.mutableCopy; NSBundle *b = nil;
-    id ext; NSString *eFind = d[@"path"];
-    while (eFind.length > 1 && !ext)
-      if (!(ext = eFind.pathExtension.length ? eFind.pathExtension : nil))
-        eFind = eFind.stringByDeletingLastPathComponent;
-    m[@"icon"] = !!ext ? [NSWorkspace.sharedWorkspace iconForFileType:ext]
-                       : [NSImage.alloc initByReferencingFile:[b = [NSBundle bundleWithPath:d[@"path"]] pathForImageResource:[b objectForInfoDictionaryKey:@"CFBundleIconFile"]]]
-                      ?: [NSImage imageNamed:NSImageNameCaution];
-  [_images addObject:m];
-  }];
+
+  [self bind:@"images" toObject:LLImageLogger.class withKeyPath:@"images" options:nil];
+//  [_table setDelegate:self];
+
+//  [LLImageLogger.images enumerateObjectsUsingBlock:^(NSMutableDictionary*d, NSUInteger idx, BOOL *stop) {
+
+////  [_images setContent:NSMutableArray.new];
 }
 //- (NSTableRowView*) tableView:(NSTableView *)tableView rowViewForRow:(NSInteger)row {
 //
