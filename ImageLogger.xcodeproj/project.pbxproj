@@ -18,8 +18,8 @@
 		6D53E41318E44281002B3680 /* LLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D53E41218E44281002B3680 /* LLAppDelegate.m */; };
 		6D53E41518E44281002B3680 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D53E41418E44281002B3680 /* Images.xcassets */; };
 		7B46C551193D2599007D72D5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B46C550193D2599007D72D5 /* MainMenu.xib */; };
+		7BA7BFAE193ED2B9007DAB90 /* framework.icns in Resources */ = {isa = PBXBuildFile; fileRef = 7BB55631193D5CCA002A9705 /* framework.icns */; };
 		7BB55635193D8649002A9705 /* dylib.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BB55633193D8646002A9705 /* dylib.png */; };
-		7BB55636193D864A002A9705 /* framework.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BB55634193D8649002A9705 /* framework.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -226,7 +226,7 @@
 			files = (
 				6D53E3DC18E4384C002B3680 /* Images.xcassets in Resources */,
 				7B46C551193D2599007D72D5 /* MainMenu.xib in Resources */,
-				7BB55636193D864A002A9705 /* framework.png in Resources */,
+				7BA7BFAE193ED2B9007DAB90 /* framework.icns in Resources */,
 				7BB55635193D8649002A9705 /* dylib.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

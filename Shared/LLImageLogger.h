@@ -11,6 +11,7 @@
 #define NEW_IMAGES_LOADED_NOTIFICATION @"⚠️🚥🚧"
 
 @interface LLMachImage : NSObject
+@property (readonly,copy) NSDictionary *flags;
 @property (readonly,copy) NSString *name, *path, *filetype, *extension;
 @property (readonly) NSUInteger warningLevel, ncmds;
 @property (readonly) id icon;
@@ -18,6 +19,7 @@
 
 @interface LLImageLogger : NSObject
 
-+ (NSMutableArray*)images;
++ (instancetype) logger;
+@property (readonly) NSArray *images;
 
 @end

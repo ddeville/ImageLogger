@@ -67,14 +67,22 @@
 
 typedef void (^VisitorBlock)(struct load_command *lc, bool *stop);
 
-@implementation LLImageLogger  static NSMutableArray *loadedImages = nil;
+//@interface LLImageLogger ()
+//@property NSArray *images;
+//@end
 
-+     (void)   load {  loadedImages = @[].mutableCopy;
+@implementation LLImageLogger @synthesize images;
 
-	_dyld_register_func_for_add_image(&image_added);
++ (void) load {
+
+  _dyld_register_func_for_add_image   (&image_added);
 	_dyld_register_func_for_remove_image(&image_removed);
 }
-+ (NSArray*) images { return loadedImages; }
++ (instancetype) logger { static LLImageLogger *logger = nil; static dispatch_once_t uno;
+
+  dispatch_once(&uno, ^{ logger = [LLImageLogger alloc]; logger = [logger init]; });
+  return logger;
+}
 
 #pragma mark - Callbacks
 
@@ -96,26 +104,27 @@ static void      _print_image(MACH_HEADER_mh, bool added) {
 
 	const char *image_name = image_info.dli_fname;
 
+  id new_image, new_path;
 
-  id newimage = [LLMachImage.alloc initWithDict:@{
-        @"path" : [NSString stringWithUTF8String:image_name],
-    @"filetype" : _describe_filetype(mh),
-       @"ncmds" : @(mh->ncmds)}];
-       
-  if(newimage) {
-    [loadedImages addObject:newimage];
-    [NSNotificationCenter.defaultCenter postNotificationName:NEW_IMAGES_LOADED_NOTIFICATION object:nil];
-  }
+  if (( new_path  = [NSString stringWithUTF8String:image_name])
+  &&  ( new_image = [LLMachImage.alloc initWithDict:@{
+          @"path" : new_path,
+      @"filetype" : _describe_filetype(mh),
+         @"ncmds" : @(mh->ncmds),
+         @"flags" : _describe_flags(mh)}]))
+
+    [[LLImageLogger.logger mutableArrayValueForKey:@"images"] addObject:new_image];
 
 	const intptr_t image_base_address = (intptr_t)image_info.dli_fbase;
-	const uint64_t image_text_size = _image_text_segment_size(mh);
-	
+	const uint64_t image_text_size    = _image_text_segment_size(mh);
+
+
 	char image_uuid[37];
 	const uuid_t *image_uuid_bytes = _image_retrieve_uuid(mh);
 	uuid_unparse(*image_uuid_bytes, image_uuid);
 	
 	const char *log = added ? "Added" : "Removed";
-	printf("%s: 0x%02lx (0x%02llx) %s <%s>\n\n", log, image_base_address, image_text_size, image_name, image_uuid);
+	printf("[%lu] %s: 0x%02lx (0x%02llx) %s <%s>\n\n",LLImageLogger.logger.images.count,log, image_base_address, image_text_size, image_name, image_uuid);
 }
 NSString *             _describe_filetype(MACH_HEADER_mh) {
 
@@ -133,7 +142,44 @@ NSString *             _describe_filetype(MACH_HEADER_mh) {
   x == MH_DSYM        ? @"companion file with only debug sections" :
   x == MH_KEXT_BUNDLE ? @"x86_64 kexts" : @"Unknown";
 }
+NSDictionary * _describe_flags(MACH_HEADER_mh){
 
+
+  static NSDictionary * flag_info; flag_info = flag_info ?: @{ /* Constants for the flags field of the mach_header */
+			@(MH_NOUNDEFS) : @[@"MH_NOUNDEFS", @"the object file has no undefined references"],
+			@(MH_INCRLINK) : @[@"MH_INCRLINK", @"the object file is the output of an incremental link against a base file and can't be link edited again"],
+			@(MH_DYLDLINK) : @[@"MH_DYLDLINK", @"the object file is input for the  dynamic linker and can't be staticly link edited again"],
+			@(MH_BINDATLOAD) : @[@"MH_BINDATLOAD", @"the object file's undefined references are bound by the dynamic linker when loaded."],
+			@(MH_PREBOUND) : @[@"MH_PREBOUND", @"the file has its dynamic undefined references prebound."],
+			@(MH_SPLIT_SEGS) : @[@"MH_SPLIT_SEGS", @"the file has its read-only and read-write segments split"],
+			@(MH_LAZY_INIT) : @[@"MH_LAZY_INIT", @"the shared library init routine is to be run lazily via catching memory faults to its writeable segments (obsolete)"],
+			@(MH_TWOLEVEL) : @[@"MH_TWOLEVEL", @"the image is using two-level name space bindings"],
+			@(MH_FORCE_FLAT) : @[@"MH_FORCE_FLAT", @"the executable is forcing all images to use flat name space bindings"],
+			@(MH_NOMULTIDEFS) : @[@"MH_NOMULTIDEFS", @"this umbrella guarantees no multiple defintions of symbols in its  sub-images so the two-level namespace hints can always be used."],
+			@(MH_NOFIXPREBINDING) : @[@"MH_NOFIXPREBINDING", @"do not have dyld notify the prebinding agent about this executable"],
+			@(MH_PREBINDABLE) : @[@"MH_PREBINDABLE", @"the binary is not prebound but can have its prebinding redone. only used when MH_PREBOUND is not set."],
+			@(MH_ALLMODSBOUND) : @[@"MH_ALLMODSBOUND", @"indicates that this binary binds to all two-level namespace modules of its dependent libraries. only used when MH_PREBINDABLE and MH_TWOLEVEL are both set."],
+			@(MH_SUBSECTIONS_VIA_SYMBOLS) : @[@"MH_SUBSECTIONS_VIA_SYMBOLS", @"safe to divide up the sections into  sub-sections via symbols for dead code stripping"],
+			@(MH_CANONICAL) : @[@"MH_CANONICAL", @"the binary has been canonicalized via the unprebind operation"],
+			@(MH_WEAK_DEFINES) : @[@"MH_WEAK_DEFINES", @"the final linked image contains external weak symbols"],
+			@(MH_BINDS_TO_WEAK) : @[@"MH_BINDS_TO_WEAK", @"the final linked image uses weak symbols"],
+			@(MH_ALLOW_STACK_EXECUTION) : @[@"MH_ALLOW_STACK_EXECUTION", @"When this bit is set, all stacks  in the task will be given stack execution privilege.  Only used in MH_EXECUTE filetypes."],
+			@(MH_ROOT_SAFE) : @[@"MH_ROOT_SAFE", @"When this bit is set, the binary declares it is safe for use in processes with uid zero"],
+			@(MH_SETUID_SAFE) : @[@"MH_SETUID_SAFE", @"When this bit is set, the binary declares it is safe for use in  processes when issetugid() is true"],
+			@(MH_NO_REEXPORTED_DYLIBS) : @[@"MH_NO_REEXPORTED_DYLIBS", @"When this bit is set on a dylib, the static linker does not need to examine dependent dylibs to see  if any are re-exported"],
+			@(MH_PIE) : @[@"MH_PIE", @"When this bit is set, the OS will load the main executable at a random address. Only used in MH_EXECUTE filetypes."],
+			@(MH_DEAD_STRIPPABLE_DYLIB) : @[@"MH_DEAD_STRIPPABLE_DYLIB", @"Only for use on dylibs. When linking against a dylib that has this bit set, the static linker   will automatically not create a LC_LOAD_DYLIB load command to the dylib if no symbols are being referenced from the dylib."],
+			@(MH_HAS_TLV_DESCRIPTORS) : @[@"MH_HAS_TLV_DESCRIPTORS", @"Contains a section of type S_THREAD_LOCAL_VARIABLES"],
+      @(MH_NO_HEAP_EXECUTION):@[@"MH_NO_HEAP_EXECUTION",@"When this bit is set, the OS will"]};
+
+  uint64_t flags = mh->flags;
+  NSMutableDictionary *d = @{@"dummyInfo":@"poopie"}.mutableCopy;
+  [flag_info enumerateKeysAndObjectsUsingBlock:^(id key, NSArray* obj, BOOL *stop) {
+    uint64_t t = [key unsignedIntValue];
+    if (flags & t) d[obj[0]] = obj[1];
+  }];
+  return d;
+}
 #pragma mark - Private
 
 static uint32_t        _image_header_size(MACH_HEADER_mh) {
@@ -207,34 +253,3 @@ static void    _image_visit_load_commands(MACH_HEADER_mh,
 
 @end
 
-/* Constants for the flags field of the mach_header
-			x == MH_NOUNDEFS ? @"the object file has no undefined references" :
-			x == MH_INCRLINK ? @"the object file is the output of an incremental link against a base file					   and can't be link edited again" :
-			x == MH_DYLDLINK ? @"the object file is input for the  dynamic linker and can't be staticly link edited again" :
-			x == MH_BINDATLOAD ? @"the object file's undefined references are bound by the dynamic linker when loaded." :
-			x == MH_PREBOUND ? @"the file has its dynamic undefined references prebound." :
-			x == MH_SPLIT_SEGS ? @"the file has its read-only and read-write segments split" :
-			x == MH_LAZY_INIT ? @"the shared library init routine is to be run lazily via catching memory faults to its writeable segments (obsolete)" :
-			x == MH_TWOLEVEL ? @"the image is using two-level name space bindings" :
-			x == MH_FORCE_FLAT ? @"the executable is forcing all images to use flat name space bindings" :
-			x == MH_NOMULTIDEFS ? @"this umbrella guarantees no multiple  defintions of symbols in its  sub-images so the two-level namespace hints can always be used." :
-			x == MH_NOFIXPREBINDING ? @"do not have dyld notify the prebinding agent about this executable" :
-			x == MH_PREBINDABLE ? @"the binary is not prebound but can   have its prebinding redone. only used when MH_PREBOUND is not set." :
-			x == MH_ALLMODSBOUND ? @"indicates that this binary binds to all two-level namespace modules of its dependent libraries. only used when MH_PREBINDABLE and MH_TWOLEVEL are both set." :
-			x == MH_SUBSECTIONS_VIA_SYMBOLS ? @"safe to divide up the sections into  sub-sections via symbols for dead code stripping" :
-			x == MH_CANONICAL ? @"the binary has been canonicalized   via the unprebind operation" :
-			x == MH_WEAK_DEFINES ? @"the final linked image contains external weak symbols" :
-			x == MH_BINDS_TO_WEAK ? @"the final linked image uses weak symbols" :
-
-			x == MH_ALLOW_STACK_EXECUTION ? @"When this bit is set, all stacks  in the task will be given stack execution privilege.  Only used in MH_EXECUTE filetypes." :
-			x == MH_ROOT_SAFE ? @"When this bit is set, the binary   declares it is safe for use in  processes with uid zero" :
-                                         
-			x == MH_SETUID_SAFE ? @"When this bit is set, the binary   declares it is safe for use in  processes when issetugid() is true" :
-
-			x == MH_NO_REEXPORTED_DYLIBS ? @"When this bit is set on a dylib,   the static linker does not need to  examine dependent dylibs to see  if any are re-exported" :
-			x == MH_PIE ? @"When this bit is set, the OS will load the main executable at a random address.  Only used in MH_EXECUTE filetypes." :
-			x == MH_DEAD_STRIPPABLE_DYLIB ? @"Only for use on dylibs.  When   linking against a dylib that   has this bit set, the static linker   will automatically not create a   LC_LOAD_DYLIB load command to the   dylib if no symbols are being   referenced from the dylib." :
-			x == MH_HAS_TLV_DESCRIPTORS ? @"Contains a section of type   S_THREAD_LOCAL_VARIABLES" :
-
-#define MH_NO_HEAP_EXECUTION 0x1000000	 When this bit is set, the OS will
-*/
